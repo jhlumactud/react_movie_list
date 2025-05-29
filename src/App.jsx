@@ -1,19 +1,13 @@
 import './App.css'
+import MovieCard from './components/MovieCard';
 
 function App() {
   return (
     <>
-      <Text display="JohnSNow 1"/>
-      <Text display="JohnSNow 2"/>
+      <MovieCard movie={{title: "JohnSnow Film", release_date: "2025"}}/>
+      <MovieCard movie={{title: "Keon Film", release_date: "2026"}}/>
+      <MovieCard movie={{title: "Keila Film", release_date: "2027"}}/>
     </>
-  );
-}
-
-function Text({display}){
-  return(
-    <div className="">
-      <p>{display}</p>
-    </div>
   );
 }
 
