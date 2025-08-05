@@ -1,24 +1,23 @@
 import './App.css'
 import MovieCard from './components/MovieCard';
+import NavBar from './components/NavBar';
 import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import {  Routes, Route } from "react-router-dom";
 
 function App() {
   const movieNumber = 2;
 
   return (
-    <>
-    {/* Conditional Rendering */}
-      {/* { movieNumber === 1 ? (
-      <MovieCard movie={{title: "JohnSnow Film", release_date: "2025"}}/>
-      ) : (
-      <MovieCard movie={{title: "Keon Film", release_date: "2026"}}/>
-      )} */}
-
-        {/*  Short circuiting */}
-        {/* {movieNumber === 1 && <MovieCard movie={{title: "JohnSnow Film", release_date: "2025"}}/>}
-        {movieNumber === 2 && <MovieCard movie={{title: "Keon Film", release_date: "2026"}}/>} */}
-    <Home />
-    </>
+    <div>
+      <NavBar />  
+      <main className='main-content'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 
